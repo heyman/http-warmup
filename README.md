@@ -3,6 +3,9 @@
 Python script / Docker image that waits for an HTTP server to come online and optionally 
 warms it up by sending some requests to it.
 
+This can be used to warm up a web server before starting to redirect real HTTP requests from 
+users, when doing zero downtime deployments.
+
 ## Usage
 
 **Wait for a host to reply with an HTTP 2xx response:**
