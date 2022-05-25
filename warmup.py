@@ -26,7 +26,7 @@ def main(urls, timeout, request_timeout, warmup_requests, warmup_threads, hostna
         if hostname:
             headers["Host"] = hostname
         try:
-            response = requests.get(url, headers, timeout=request_timeout)
+            response = requests.get(url, headers=headers, timeout=request_timeout)
         except requests.exceptions.RequestException as e:
             if verbose:
                 print("GET", url, "-->", "FAILED:", str(e))
