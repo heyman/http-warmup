@@ -32,7 +32,7 @@ def main(urls, timeout, request_timeout, warmup_requests, warmup_threads, hostna
                 print("GET", url, "-->", "FAILED:", str(e))
             raise
         if verbose:
-            print("GET", url, "-->", response.status_code)
+            print("GET", url, "-->", "HTTP", response.status_code, "(%i bytes)" % len(response.content))
         return response
 
     def wait_for_host():
