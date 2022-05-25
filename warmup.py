@@ -9,11 +9,11 @@ import requests
 
 @click.command()
 @click.argument("urls", nargs=-1, required=True)
-@click.option("--timeout", default=60)
-@click.option("--warmup-requests", default=0, help="Number of warmup requests to send")
-@click.option("--warmup-threads", default=1)
-@click.option("--request-timeout", default=1)
-@click.option("--hostname")
+@click.option("--timeout", default=60, help="Number of seconds to wait for the host to come online")
+@click.option("--warmup-requests", default=0, help="Number of warm-up requests to send")
+@click.option("--warmup-threads", default=1, help="Number of threads used to send the warm-up requests")
+@click.option("--request-timeout", default=5, help="Request timeout for individual HTTP requests")
+@click.option("--hostname", help="Overrides the `Hostname` HTTP request header if specified")
 @click.option("-v", "--verbose", is_flag=True)
 def main(urls, timeout, request_timeout, warmup_requests, warmup_threads, hostname, verbose):
     """
